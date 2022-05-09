@@ -7,7 +7,7 @@ class P {
 			o = new O();
 			t1 = new T1();
 
-			o.qm2();
+			o.qm();
 			t1.start();
 			t1.join();
 
@@ -21,10 +21,10 @@ class T1 extends Thread {
 	public void run() {
 		T1 t1;
 		t1 = this;
-		t1.qm1();
+		t1.qm();
 	}
 
-	public void qm1() {}
+	public void qm() {}
 
 }
 
@@ -33,5 +33,5 @@ class L {
 }
 
 class O {
-	public void qm2() {}
+	public void qm() {}
 }

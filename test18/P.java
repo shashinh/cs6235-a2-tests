@@ -1,3 +1,4 @@
+//a thread can run in parallel with its grandfather
 class P {
 	public static void main(String [] args){
 			T1 t1;

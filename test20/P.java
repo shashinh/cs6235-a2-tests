@@ -1,3 +1,4 @@
+//synch object is non-singleton
 class P {
 	public static void main(String [] args){
 			T1 t1;
@@ -74,7 +75,4 @@ class O {
 		ret = true;
 		return ret;
 	}
-	public void qm1() { }
-	public void qm2() { }
-	public void qm3() { }
 }

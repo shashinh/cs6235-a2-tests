@@ -1,34 +1,52 @@
+//synch object is non-singleton - variation
 class P {
 	public static void main(String [] args){
 			T1 t1;
 			T2 t2;
 			O o;
-			L lock;
-			boolean b;
+			L lock1;
+			L lock2;
+			L x;
+			L y;
+			boolean b1;
+			boolean b2;
 		try {
+			o = new O();
 			t1 = new T1();
 			t2 = new T2();
-			lock = new L();
-			o = new O();
+			x = new L();
+			y = new L();
+			z = new L();
 
-			t1.l = lock;
-			t2.l = lock;
+			b1 = o.getBool();;
+			b2 = o.getBool();;
 
-			o.qm1();
+			if(b1) {
+				lock1 = x;
+			} else {
+				lock1 = y;
+			}
+
+			if(b2) {
+				lock2 = y;
+			} else {
+				lock2 = z;
+			}
+
+			t1.l = lock1;
+			t2.l = lock2;
+
 			t1.start();
-			o.qm2();
 			t2.start();
 
-			o.qm3();
 			t1.join();
-			o.qm4();
 			t2.join();
-			o.qm5();
 		} catch (Exception ex) {
 		}
 	}
 }
 
+class L { }
 class T1 extends Thread {
 	L l;
 
@@ -62,9 +80,9 @@ class T2 extends Thread {
 }
 
 class O {
-	public void qm1() { }
-	public void qm2() { }
-	public void qm3() { }
-	public void qm4() { }
-	public void qm5() { }
+	public boolean getBool() {
+		boolean ret;
+		ret = true;
+		return ret;
+	}
 }

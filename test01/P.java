@@ -1,3 +1,4 @@
+//base case - interleaved statements may run in parallel
 class P {
 	public static void main(String [] args){
 			T1 t1;

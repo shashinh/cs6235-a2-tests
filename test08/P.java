@@ -1,3 +1,4 @@
+//t2 is started and joined in parallel with t1
 class P {
 	public static void main(String [] args){
 			T1 t1;

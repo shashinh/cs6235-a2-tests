@@ -1,4 +1,4 @@
-//simple synchronization - statements inside sync cannot run in parallel
+//simple synchronization - but on different objects. Statements in synch can run in parallel
 class P {
 	public static void main(String [] args){
 			T1 t1;

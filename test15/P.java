@@ -1,3 +1,4 @@
+//notify-wait imposes an ordering
 class P {
 	public static void main(String [] args){
 			T1 t1;

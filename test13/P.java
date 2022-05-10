@@ -1,3 +1,4 @@
+//non-synchronized statements in a thread can run in parallel with synchronized statements
 class P {
 	public static void main(String [] args){
 			T1 t1;

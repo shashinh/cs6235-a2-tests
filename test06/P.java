@@ -1,3 +1,4 @@
+//statements are non-interleaved - will not run in parallel
 class P {
 	public static void main(String [] args){
 			T1 t1;

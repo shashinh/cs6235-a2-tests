@@ -1,3 +1,4 @@
+//synchronized statements in thread can run in parallel with non-synchronized, interleaved statements of parent
 class P {
 	public static void main(String [] args){
 			T1 t1;

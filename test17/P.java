@@ -1,3 +1,4 @@
+//thread object is non-singleton, statically either thread may be executed
 class P {
 	public static void main(String [] args){
 			T1 t1_or_t2;

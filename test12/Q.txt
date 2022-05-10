@@ -1,11 +1,1 @@
 T1:qm,T2:qm
-O:qm1,T1:qm
-O:qm1,T2:qm
-O:qm2,T1:qm
-O:qm2,T2:qm
-O:qm3,T1:qm
-O:qm3,T2:qm
-O:qm4,T1:qm
-O:qm4,T2:qm
-O:qm5,T1:qm
-O:qm5,T2:qm

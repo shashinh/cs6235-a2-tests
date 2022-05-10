@@ -18,14 +18,10 @@ class P {
 			t2.l = lock2;
 
 
-			o.qm1();
 			t1.start();
-			o.qm2();
 			t2.start();
 
-			o.qm3();
 			t1.join();
-			o.qm4();
 			t2.join();
 			o.qm5();
 		} catch (Exception ex) {

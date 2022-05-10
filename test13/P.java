@@ -34,10 +34,12 @@ class T1 extends Thread {
 		synchronized(l) {
 			t1.qm2();
 		}
+		t1.qm3();
 	}
 
 	public void qm1() {}
 	public void qm2() {}
+	public void qm3() {}
 
 }
 
@@ -52,10 +54,12 @@ class T2 extends Thread {
 		synchronized(l) {
 			t2.qm2();
 		}
+		t2.qm3();
 	}
 
 	public void qm1() {}
 	public void qm2() {}
+	public void qm3() {}
 
 }
 

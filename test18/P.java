@@ -25,11 +25,15 @@ class T1 extends Thread {
 		T2 t2;
 		t2 = new T2();
 
+		t1.qm1();
 		try {
 			t2.start();
+			t1.qm2();
 			t2.join();
 		} catch (Exception ex) { }
 	}
+	public void qm1(){}
+	public void qm2(){}
 
 }
 

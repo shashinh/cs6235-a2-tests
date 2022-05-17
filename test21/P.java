@@ -37,7 +37,7 @@ class P {
 			t1.l = lock1;
 			t2.l = lock2;
 
-			o:qm();
+			o.qm();
 			t1.start();
 			t2.start();
 
@@ -82,10 +82,11 @@ class T2 extends Thread {
 }
 
 class O {
+	public void qm() { }
 	public boolean getBool() {
 		boolean ret;
 		ret = true;
 		return ret;
+		
 	}
-	public void qm();
 }

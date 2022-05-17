@@ -48,6 +48,6 @@ class T2 extends Thread {
 }
 
 class O {
-	public void qm();
+	public void qm() { }
 }
 

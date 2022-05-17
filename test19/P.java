@@ -32,7 +32,7 @@ class T1 extends Thread {
 		} catch (Exception ex) { }
 	}
 	
-	public void qm();
+	public void qm() { }
 
 }
 

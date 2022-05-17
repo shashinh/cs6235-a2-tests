@@ -3,7 +3,6 @@ class P {
 	public static void main(String [] args){
 			T1 t1;
 			T2 t2;
-			O o;
 			L lock;
 		try {
 			t1 = new T1();
@@ -23,6 +22,7 @@ class P {
 	}
 }
 
+class L {} 
 class T1 extends Thread {
 	L l;
 
@@ -63,8 +63,3 @@ class T2 extends Thread {
 
 }
 
-class O {
-	public void qm1() { }
-	public void qm2() { }
-	public void qm3() { }
-}

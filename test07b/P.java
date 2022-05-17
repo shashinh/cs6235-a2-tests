@@ -1,23 +1,20 @@
-//copy of test08
+//statements are interleaved, may run in parallel
 class P {
 	public static void main(String [] args){
 			T1 t1;
 			T2 t2;
-			O o;
 			boolean b;
+			O o;
 		try {
-
 			o = new O();
 			t1 = new T1();
 			t2 = new T2();
 			
 			t1.start();
-			o.qm1();
 			t2.start();
-			o.qm2();
-			t2.join();
-			o.qm3();
+
 			t1.join();
+			t2.join();
 
 
 		} catch (Exception ex) {
@@ -50,7 +47,6 @@ class T2 extends Thread {
 }
 
 class O {
-	public void qm1() { }
-	public void qm2() { }
-	public void qm3() { }
+	public void qm();
 }
+

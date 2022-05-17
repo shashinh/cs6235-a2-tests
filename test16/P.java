@@ -23,20 +23,23 @@ class P {
 	}
 }
 
+class L {} 
 class T1 extends Thread {
 	L l;
 
 	public void run() {
 		T1 t1;
-		t1 = this;
+		try {
+			t1 = this;
 
-		t1.qm1();
-		synchronized(l) {
-			t1.qm2();
-			l.notifyAll();
-			t1.qm3();
-		}
-		t1.qm4();
+			t1.qm1();
+			synchronized(l) {
+				t1.qm2();
+				l.notifyAll();
+				t1.qm3();
+			}
+			t1.qm4();
+		} catch (Exception ex) {}
 	}
 
 	public void qm1() {}
@@ -51,15 +54,17 @@ class T2 extends Thread {
 
 	public void run() {
 		T2 t2;
-		t2 = this;
+		try {
+			t2 = this;
 
-		t2.qm1();
-		synchronized(l) {
-			t2.qm2();
-			l.wait();
-			t2.qm3();
-		}
-		t2.qm4();
+			t2.qm1();
+			synchronized(l) {
+				t2.qm2();
+				l.wait();
+				t2.qm3();
+			}
+			t2.qm4();
+		} catch (Exception ex) {}
 	}
 
 	public void qm1() {}

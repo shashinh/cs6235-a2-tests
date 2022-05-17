@@ -1,1 +1,2 @@
-O:qm,T1:qm
+O:qm1,T1:qm
+P:qm2,T1:qm

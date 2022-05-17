@@ -26,6 +26,7 @@ class P {
 			t1.l = lock;
 			t2.l = lock;
 
+			o.qm();
 			t1.start();
 			t2.start();
 
@@ -75,4 +76,5 @@ class O {
 		ret = true;
 		return ret;
 	}
+	public void qm() { }
 }

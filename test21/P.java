@@ -8,6 +8,7 @@ class P {
 			L lock2;
 			L x;
 			L y;
+			L z;
 			boolean b1;
 			boolean b2;
 		try {
@@ -36,6 +37,7 @@ class P {
 			t1.l = lock1;
 			t2.l = lock2;
 
+			o:qm();
 			t1.start();
 			t2.start();
 
@@ -85,4 +87,5 @@ class O {
 		ret = true;
 		return ret;
 	}
+	public void qm();
 }

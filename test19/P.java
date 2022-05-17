@@ -23,13 +23,16 @@ class T1 extends Thread {
 
 	public void run() {
 		T2 t2;
-		t2 = new T2();
 
 		try {
+			t2 = new T2();
+			this.qm();
 			t2.start();
 			//t2.join(); --> T1 no longer waits for T2 to terminate
 		} catch (Exception ex) { }
 	}
+	
+	public void qm();
 
 }
 

@@ -1,81 +1,74 @@
-//notify-wait imposes an ordering
+//deadlocks with singleton synch objects
 class P {
 	public static void main(String [] args){
 			T1 t1;
 			T2 t2;
-			O o;
-			L lock;
+			L lock1;
+			L lock2;
 		try {
+			lock1 = new L();
+			lock2 = new L();
+
 			t1 = new T1();
 			t2 = new T2();
-			lock = new L();
 
-			t1.l = lock;
-			t2.l = lock;
+			t1.l1 = lock1;
+			t1.l2 = lock2;
+
+			t2.l1 = lock2;
+			t2.l2 = lock1;
 
 			t1.start();
 			t2.start();
-
-			t1.join();
-			t2.join();
 		} catch (Exception ex) {
 		}
 	}
 }
 
-class L {} 
+class L { }
 class T1 extends Thread {
-	L l;
+	L l1;
+	L l2;
 
 	public void run() {
 		T1 t1;
-		try {
-			t1 = this;
+		t1 = this;
 
+		t1.qm3();
+		synchronized(l1) {
 			t1.qm1();
-			synchronized(l) {
+			synchronized(l2) {
 				t1.qm2();
-				l.notify();
-				t1.qm3();
 			}
-			t1.qm4();
-		} catch (Exception ex) {}
+		}
 	}
 
 	public void qm1() {}
 	public void qm2() {}
 	public void qm3() {}
-	public void qm4() {}
 
 }
 
 class T2 extends Thread {
-	L l;
+	L l1;
+	L l2;
 
 	public void run() {
 		T2 t2;
-		try {
-			t2 = this;
-	
+		t2 = this;
+
+		t2.qm3();
+		synchronized(l1) {
 			t2.qm1();
-			synchronized(l) {
+			synchronized(l2) {
 				t2.qm2();
-				l.wait();
-				t2.qm3();
 			}
-			t2.qm4();
-		} catch (Exception ex) {}
+		}
 	}
 
 	public void qm1() {}
 	public void qm2() {}
 	public void qm3() {}
-	public void qm4() {}
 
 }
 
-class O {
-	public void qm1() { }
-	public void qm2() { }
-	public void qm3() { }
-}

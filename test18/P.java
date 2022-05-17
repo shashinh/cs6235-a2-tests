@@ -22,11 +22,13 @@ class L { }
 class T1 extends Thread {
 
 	public void run() {
+		T1 t1;
 		T2 t2;
-		t2 = new T2();
-
-		t1.qm1();
 		try {
+			t1 = this;
+			t2 = new T2();
+
+			t1.qm1();
 			t2.start();
 			t1.qm2();
 			t2.join();

@@ -4,11 +4,13 @@ class P {
 			T1 t1;
 			T2 t2;
 			boolean b;
+			O o;
 		try {
-
+			o = new O();
 			t1 = new T1();
 			t2 = new T2();
 			
+			o.qm();
 			t1.start();
 			t2.start();
 
@@ -43,5 +45,9 @@ class T2 extends Thread {
 
 	public void qm() {}
 
+}
+
+class O {
+	public void qm();
 }
 

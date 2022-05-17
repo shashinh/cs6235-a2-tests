@@ -13,7 +13,8 @@ class P {
 			} else {
 				t1_or_t2 = new T2();
 			}
-
+			
+			o.qm2();
 			t1_or_t2.start();
 			o.qm1();	
 			t1_or_t2.join();
@@ -58,5 +59,6 @@ class O {
 		return ret;
 	}
 	public void qm1() { }
+	public void qm2() { }
 }
 

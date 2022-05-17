@@ -29,6 +29,8 @@ class P {
 	}
 }
 
+class L {} 
+
 class T1 extends Thread {
 	L l;
 

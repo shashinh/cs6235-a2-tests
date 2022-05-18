@@ -1,7 +1,8 @@
 //nodes should not be killed when a non-singleton thread object is joined
 class P {
 	public static void main(String [] args){
-			T1 t1_or_t2;
+			T1 t1;
+			T1 t2;
 			O o;
 			boolean b;
 		try {
@@ -9,16 +10,18 @@ class P {
 			b = o.getBool();;
 
 			if(b) {
-				t1_or_t2 = new T1();
+				t1 = new T1();
+				t2 = new T2();
 			} else {
-				t1_or_t2 = new T2();
+				t1 = new T2();
+				t2 = new T1();
 			}
 			
 			o.qm1();
-			t1_or_t2.start();
-			t1_or_t2.join();
+			t1.start();
+			t2.start();
+			t1.join();
 			o.qm2();
-
 
 		} catch (Exception ex) {
 		}

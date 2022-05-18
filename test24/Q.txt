@@ -1,2 +1,3 @@
-T1:qm1,O:qm
-T2:qm1,O:qm
+T1:qm1,O:qm2
+T2:qm1,O:qm2
+T1:qm1,O:qm1

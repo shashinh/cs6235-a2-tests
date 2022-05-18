@@ -14,9 +14,10 @@ class P {
 				t1_or_t2 = new T2();
 			}
 			
+			o.qm1();
 			t1_or_t2.start();
 			t1_or_t2.join();
-			o.qm();
+			o.qm2();
 
 
 		} catch (Exception ex) {
@@ -57,6 +58,7 @@ class O {
 		ret = true;
 		return ret;
 	}
-	public void qm() { }
+	public void qm1() { }
+	public void qm2() { }
 }
 

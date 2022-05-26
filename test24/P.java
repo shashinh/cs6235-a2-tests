@@ -22,6 +22,7 @@ class P {
 			t2.start();
 			t1.join();
 			o.qm2();
+			t2.join();
 
 		} catch (Exception ex) {
 		}
